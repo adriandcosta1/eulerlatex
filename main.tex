@@ -1,0 +1,113 @@
+\documentclass[14pt]{extreport}
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[makeroom]{cancel}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{relsize}
+
+\pagenumbering{gobble}
+
+\begin{document}
+{\center{\Huge Proof of Euler's Formula \par}}
+
+
+{\center{\Large Adrian D'Costa \par}}
+\text{ }
+\newline
+
+We have to prove that:
+\newline
+
+$\displaystyle e^{i\theta} = \cos{(\theta)} + i\sin{(\theta)}$
+\newline
+
+
+Let $\displaystyle f(\theta) = e^{i\theta}$ According to Maclaurin series we know that:
+
+$\displaystyle f(x) = \mathlarger{\mathlarger{\sum}}\limits_{n = 0}^{\infty}\frac{f^{(n)}(a)x^n}{n!}\,\, \text{ where } f^{(0)}(a) = f(a) \text{ and } 0! = 1$
+\newline
+
+
+Also:
+\newline
+
+$i^{2} = -1,\, i^{3} = -i,\, i^{4} = 1,\, i^{5} = i,\, i^{6} = -1, i^{7} = -i,\, i^{8} = 1$
+\newline
+
+\begin{align*}f^{(0)}(0) &= 1\\ f^{(1)}(0) &= i\\ f^{(2)}(0) &= -1\\f^{(3)}(0) &= -i\\ f^{(4)}(0) &= 1\\ f^{(5)}(0) &=  i \\ f^{(6)}(0) &= -1\\f^{(7)}(0) &= -i\\ f^{(8)}(0) &= 1\end{align*}
+
+
+$\displaystyle e^{i\theta} = \frac{1}{0!} + \frac{i\theta}{1!}  - \frac{\theta^{2}}{2!} - \frac{i\theta^{3}}{3!} + \frac{\theta^{4}}{4!} +  \frac{i\theta^{5}}{5!} - \frac{\theta^{6}}{6!} - \frac{i\theta^{7}}{7!} + \frac{\theta^{8}}{8!} + ...$
+\newline
+
+Now to find Maclaurin series representation of:
+\newline
+
+$\displaystyle g(\theta) = \cos{(\theta)}$
+\newline
+
+\begin{align*}g^{(0)}(0) &= \cos{(0)} = 1\\ g^{(1)}(0) &= -\sin{(0)} = 0 \\ g^{(2)}(0) &= -\cos{(0)} = -1 \\ g^{(3)}(0) &= \sin{(0)} = 0 \\ g^{(4)}(0) &= \cos{(0)} = 1 \\ g^{(5)}(0) &= -\sin{(0)} = 0 \\ g^{(6)}(0) &= -\cos{(0)} = -1 \\ g^{(7)}(0) &= \sin{(0)} = 0 \\g^{(8)}(0) &= \cos{(0)} = 1  \end{align*}
+
+$\displaystyle \cos{(\theta)} = \frac{1}{0!} - \frac{\theta^{2}}{2!} + \frac{\theta^{4}}{4!} - \frac{\theta^{6}}{6!} + \frac{\theta^{8}}{8!} + ...$
+\newline
+
+Maclaurin series representation of:
+\newline
+
+$\displaystyle h(\theta) = \sin{(x)}$
+\newline
+
+\begin{align*}h^{(0)}(0) &= \sin{(0)} = 0\\ h^{(1)}(0) &= \cos{(0)} = 1 \\ h^{(2)}(0) &= -\sin{(0)} = 0 \\ h^{(3)}(0) &= -\cos{(0)} = -1 \\  h^{(4)}(0) &= \sin{(0)} = 0 \end{align*}
+
+
+\begin{align*} h^{(5)}(0) &= \cos{(0)} = 1 \\ h^{(6)}(0) &= -\sin{(0)} = 0 \\ h^{(7)}(0) &= -\cos{(0)} = -1 \\h^{(8)}(0) &= \sin{(0)} = 0  \end{align*}
+\newline
+
+$\displaystyle i\sin{(\theta)} = \frac{i\theta}{1!} - \frac{i\theta^{3}}{3!} + \frac{i\theta^{5}}{5!} - \frac{i\theta^{7}}{7!} + ...$
+\newline
+
+
+Now:
+\newline
+
+\begin{align*}\cos{(\theta)} + i \sin{(\theta)} &= \frac{1}{0!} - \frac{\theta^{2}}{2!} + \frac{\theta^{4}}{4!} - \frac{\theta^{6}}{6!} + \frac{\theta^{8}}{8!} + \frac{i\theta}{1!} - \frac{i\theta^{3}}{3!} + \frac{i\theta^{5}}{5!} - \frac{i\theta^{7}}{7!} + ... \\ &= \frac{1}{0!} +  \frac{i\theta}{1!} - \frac{\theta^{2}}{2!} - \frac{i\theta^{3}}{3!} + \frac{\theta^{4}}{4!}  + \frac{i\theta^{5}}{5!} - \frac{\theta^{6}}{6!} - \frac{i\theta^{7}}{7!}  + \frac{\theta^{8}}{8!} + ... \\ &= e^{i\theta}   \end{align*}
+\newline
+
+
+\text{[Q.E.D.]}
+\newline
+
+
+\section{Another way to prove Euler's formula}
+Another way to prove Euler's formula is that:
+
+$\displaystyle \cos{(\theta)} + i \sin{(\theta)} = e^{i\theta}$
+\newline
+
+
+Now rearranging that equation we get:
+\newline
+
+
+$\displaystyle 1 = \frac{e^{i\theta}}{\cos{(\theta)} + i \sin{(\theta)}}$
+
+
+\begin{align*}0 &= \frac{d}{d\theta}\left(\frac{e^{i\theta}}{\cos{(\theta)} + i\sin{(\theta)}}\right).....\text{[Taking der. of both sides]} \\0 &= \frac{ie^{i\theta}\cos{(\theta)} - e^{i\theta}\sin{(\theta)} + e^{i\theta}\sin{(\theta)} - ie^{i\theta}\cos{(\theta)}}{\cos^{2}{(\theta)} + 2 i \cos{(\theta)}\sin{(\theta)} - \sin^{2}{(\theta)}}\\ 0 &= \frac{0}{\cos^{2}{(\theta)} + 2 i \cos{(\theta)}\sin{(\theta)} - \sin^{2}{(\theta)}}\\ 0 &= 0 \\ L.H.S &= R.H.S  \end{align*}
+
+\text{[Q.E.D.]}
+
+
+
+
+
+
+
+
+
+
+\end{document}
